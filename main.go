@@ -8,15 +8,15 @@ import (
 
 func attack(charName, charClass string) string {
 	if charClass == "warrior" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randint(8, 10))
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randInt(8, 10))
 	}
 
 	if charClass == "mage" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randint(10, 15))
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randInt(10, 15))
 	}
 
 	if charClass == "healer" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randint(2, 4))
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randInt(2, 4))
 	}
 	return "неизвестный класс персонажа"
 }
@@ -25,11 +25,11 @@ func attack(charName, charClass string) string {
 func defence(charName, charClass string) string {
 	switch charClass {
 	case "warrior":
-		return fmt.Sprintf("%s блокировал %d урона.", charName, randint(15, 20))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, randInt(15, 20))
 	case "mage":
-		return fmt.Sprintf("%s блокировал %d урона.", charName, randint(8, 12))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, randInt(8, 12))
 	case "healer":
-		return fmt.Sprintf("%s блокировал %d урона.", charName, randint(12, 15))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, randInt(12, 15))
 	}
 
 	return "неизвестный класс персонажа"
@@ -134,6 +134,6 @@ func main() {
 	fmt.Println(startTraining(charName, charClass))
 }
 
-func randint(min, max int) int {
+func randInt(min, max int) int {
 	return rand.Intn(max-min) + min
 }
